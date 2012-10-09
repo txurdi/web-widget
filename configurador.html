@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+	<title>Configurador Widget Euskalmet</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="title" content="Configurador de widgets" />
+	<meta name="description" content="Configurador de widgets" />
+	<meta name="keywords" content="widget" />
+	<meta name="language" content="es" />
+	<meta name="author" content="Igor Ormaetxebarria (txurdi)"/>
+	<meta name="Copyright" content="Igor Ormaetxebarria (txurdi)" />
+	<link rel="Index" href="configurador.html" />
+	<link rel="stylesheet" href="stylesheets/configurador.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" media="screen" type="text/css" href="color/farbtastic.css" />
+	<script type="text/javascript" src="color/jquery.js"></script>
+	<script type="text/javascript" src="color/farbtastic.js"></script>
+	<script src="configurador.js" type="text/javascript"></script>
+</head>
+<body>
+
+<form id="opciones" method="_GET" style="width: 700px;">
+	<fieldset>
+		<legend>Diseño</legend>
+		<input type="radio" id="mi_CSS" name="CSS[]" value="1" /><label for="mi_CSS">Usar mi propio CSS: </label><br/>
+<!--		<div id="div_mi_CSS" style="margin-left: 50px;padding: 10px;border-left: 1px solid #666;">
+			<br/><label for="borde">URL del CSS: </label>
+			<input type="input" id="mi_CSS_URL" name="mi_CSS_URL" value="style.css" checked="checked" />(CSS)
+		</div>-->
+		<input type="radio" id="CSS_def" name="CSS[]" value="1" checked="checked" /><label for="CSS_def">Usar CSS por defecto: </label><br/>
+		<div id="div_CSS_def" style="margin-left: 50px;padding: 10px;border-left: 1px solid #666;">
+			<div id="picker" style="float: right;"></div>
+			<br/><label for="color_fondo">Color de fondo: </label>
+			<input type="input" id="color_fondo" name="color_fondo" value="#fff" checked="checked" class="color_fondo colorwell" />(#xxxxxx)
+			<br/><label for="color_letra">Color de letra: </label>
+			<input type="input" id="color_letra" name="color_letra" value="#000" checked="checked" class="color_letra colorwell" />(#xxxxxx)
+			<br/><label for="alto">Alto: </label>
+			<input type="input" id="alto" name="alto" value="100" checked="checked" />(px)
+			<br/><label for="ancho">Ancho: </label>
+			<input type="input" id="ancho" name="ancho" value="100" checked="checked" />(px)
+			<br/><label for="borde">Borde: </label>
+			<input type="input" id="borde" name="borde" value="1px solid black" checked="checked" />(CSS)
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Datos</legend>
+		<br/><label for="idioma">Idioma: </label>
+		<select id="idioma">
+			<option value="es">Castellano</option>
+			<option value="eu">Euskara</option>
+		</select>
+		<br/><label for="localidad">Localidad: </label>
+		<select id="localidad">
+			<option value="2">Bilbao</option>
+			<option value="19">Vitoria-Gazteiz</option>
+			<option value="18">Donostia-San Sebastián</option>
+			<option value="24">Arrasate</option>
+			<option value="17">Iruña</option>
+			<option value="23">La guardia</option>
+		</select>
+		<br/><label for="hoy">Tiempo actual: </label>
+		<input type="checkbox" id="hoy" name="hoy" value="1" checked="checked" />
+		<br/><label for="manana">Tiempo de mañana: </label>
+		<input type="checkbox" id="manana" name="manana" value="1" checked="checked" />
+		<br/><label for="pasado">Tiempo de pasado mañana: </label>
+		<input type="checkbox" id="pasado" name="pasado" value="1" checked="checked" />
+		<br/><label for="temperatura">Temperatura actual: </label>
+		<input type="checkbox" id="temperatura" name="temperatura" value="1" checked="checked" />
+		<br/><label for="temperaturaMAXMIN">Temperaturas máxima/mínima: </label>
+		<input type="checkbox" id="temperaturaMAXMIN" name="temperaturaMAXMIN" value="1" checked="checked" />
+		<br/><label for="tam_icono">Tamaño del icono: </label>
+		<input type="input" id="tam_icono" name="tam_icono" value="20" checked="checked" />(px)
+		<br/><label for="tam_texto_desc">Tamaño del texto: </label>
+		<input type="input" id="tam_texto_desc" name="tam_texto_desc" value="100" checked="checked" />(letras)
+	</fieldset>
+	<input type="button" value="actualizar" name="actualizar" id="actualizar" />
+	<input type="button" value="probar" name="probar" id="probar" />
+</form>
+<h1>Ejemplo de como quedaría</h1>
+<div id="jswidget">
+
+</div>
+<h1>Código a insertar donde quieras el Widget:</h1>
+<textarea id="codigo_generado" cols="100" rows="9">
+<script src="http://txurdi.ath.cx/euskalmet/final.js" type="text/javascript">
+{}
+</script>
+</textarea>
+</body>
+</html>
